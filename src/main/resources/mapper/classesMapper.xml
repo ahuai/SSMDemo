@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace可以理解成虚拟文件夹-->
+<mapper namespace="org.lanqiao.dao.IClassDao">
+
+
+    <select id="getAllClassInfo" resultMap="classMap">
+    SELECT * FROM CLASS C ,teacher t
+    WHERE c.teacher_id=t.teacher_id
+</select>
+
+    <!--此处的classMap和上边select语句中的classMap对应-->
+    <resultMap id="classMap" type="org.lanqiao.bean.Classes">
+        <id property="classId" column="class_id"/>
+        <result property="className" column="class_name"/>
+
+        <!--引入teacher对象,并且描述映射关系-->
+        <association property="teacher" javaType="org.lanqiao.bean.Teacher">
+            <id property="teacherId" column="teacher_id"/>
+            <result property="teacherName" column="teacher_name"/>
+        </association>
+    </resultMap>
+
+    <select id="getClassInfoById" resultMap="classMap2" parameterType="int">
+        SELECT * FROM class c,teacher t,student s
+        where c.teacher_id=t.teacher_id AND c.class_id=s.class_id
+        AND c.class_id=#{classId}
+    </select>
+    <resultMap id="classMap2" type="org.lanqiao.bean.Classes">
+        <id property="classId" column="class_id"/>
+        <result property="className" column="class_name"/>
+
+        <!--引入teacher对象,并且描述映射关系-->
+        <association property="teacher" javaType="org.lanqiao.bean.Teacher">
+            <id property="teacherId" column="teacher_id"/>
+            <result property="teacherName" column="teacher_name"/>
+        </association>
+
+        <!--引入学生集合,并且描述映射关系-->
+        <collection property="students" ofType="org.lanqiao.bean.Student">
+            <id property="studentId" column="student_id"/>
+            <id property="classId" column="class_id"/>
+            <result property="studentName" column="student_name"/>
+        </collection>
+
+    </resultMap>
+
+</mapper>

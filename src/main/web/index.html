@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://java.sun.com/jsf/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--在移动端默认显示最大(充满整个屏幕)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    你好，世界！比较少开会了积分换破碎机的护肤你比不上的发掘开发要上课了辅导
+    班的护肤就爱看双方的后视镜阿凡达
+</div>
+<div class="container-fluid">
+    你好，世界！比较少开会了积分换破碎机的护肤你比不上的发掘开发要上课了辅导
+    班的护肤就爱看双方的后视镜阿凡达
+</div>
+<div class="row">
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+</div>
+<div class="row">
+    <div class="col-md-8">.col-md-8</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-6">.col-md-6</div>
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <td>id</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>张三</td>
+        <td>22</td>
+        <td>男</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>李倩</td>
+        <td>20</td>
+        <td>女</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>李四</td>
+        <td>21</td>
+        <td>女</td>
+    </tr>
+</table>
+<button onclick="showM()" type="button" class="btn-primary">显示模态窗口</button>
+<!--	模态窗口-->
+<div class="modal fade" id="userUpdatePopup" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">User Update</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input class="form-control" id="id" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">性别</label>
+                        <input class="form-control" id="gender">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthday">生日</label>
+                        <input type="text" class="form-control" id="birthday">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" onclick="updateStu()" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    function showM() {
+        $("#userUpdatePopup").modal();
+    }
+</script>
+</html>
